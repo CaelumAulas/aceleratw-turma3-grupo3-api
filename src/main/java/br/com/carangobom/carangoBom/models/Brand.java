@@ -1,18 +1,20 @@
 package br.com.carangobom.carangoBom.models;
 
 
+import br.com.carangobom.carangoBom.dto.VehicleDto;
 import lombok.Data;
 
 import javax.persistence.*;
-
-@Entity
 @Data
-@Table(name="brands")
+@Entity
+
+@Table(name = "brand")
 public class Brand {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+
 
     public Brand(){}
 

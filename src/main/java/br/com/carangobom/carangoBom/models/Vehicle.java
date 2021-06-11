@@ -6,18 +6,26 @@ import lombok.Data;
 import javax.persistence.*;
 import java.time.Year;
 
-@Entity
+
 @Data
-@Table(name="brands")
+@Entity
+@Table(name = "vehicle")
 public class Vehicle {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-	@ManyToOne
+
+    @ManyToOne()
 	private Brand brand;
+
+    public Vehicle(){
+
+    }
+
+
     private String model;
-    private Year years;
+    private int years;
     private Double price;
 
 
