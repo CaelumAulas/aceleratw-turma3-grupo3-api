@@ -1,11 +1,9 @@
 package br.com.carangobom.carangoBom.controller;
-
-import br.com.carangobom.carangoBom.dto.VehicleForm;
 import br.com.carangobom.carangoBom.dto.VehicleDto;
 import br.com.carangobom.carangoBom.models.Vehicle;
 import br.com.carangobom.carangoBom.repository.BrandRepository;
-
 import br.com.carangobom.carangoBom.repository.VehiclesRepository;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -13,15 +11,14 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.util.UriComponentsBuilder;
-
 import javax.transaction.Transactional;
-import java.net.URI;
-import java.util.List;
+
 
 @Data
 @RestController
 @RequestMapping("/vehicle")
+@AllArgsConstructor
+
 public class VehicleController {
 
 
@@ -36,17 +33,14 @@ public class VehicleController {
 
          Page<Vehicle> vehicles = vehiclesRepository.findAll(paginacao);
          Page<VehicleDto> vehicleDtos = VehicleDto.converter(vehicles);
-
-            return vehicleDtos;
-
-
+         return vehicleDtos;
     }
 
     @DeleteMapping("/{id}")
     @Transactional
     public ResponseEntity deletar(@PathVariable Long id){
         vehiclesRepository.deleteById(id);
-        return ResponseEntity.ok().build();
+        return (ResponseEntity.ok().build());
     }
 
 
