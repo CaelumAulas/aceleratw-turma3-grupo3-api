@@ -1,3 +1,4 @@
+/Users/david.fernandes/Documents/acelera/aceleratw-turma3-grupo3-api/src/main/java/br/com/carangobom/carangoBom/model/Usuario.java
 /Users/david.fernandes/Documents/acelera/aceleratw-turma3-grupo3-api/src/main/java/br/com/carangobom/carangoBom/config/security/AuthService.java
 /Users/david.fernandes/Documents/acelera/aceleratw-turma3-grupo3-api/src/main/java/br/com/carangobom/carangoBom/controller/AuthController.java
 /Users/david.fernandes/Documents/acelera/aceleratw-turma3-grupo3-api/src/main/java/br/com/carangobom/carangoBom/model/Profile.java
@@ -8,4 +9,3 @@
 /Users/david.fernandes/Documents/acelera/aceleratw-turma3-grupo3-api/src/main/java/br/com/carangobom/carangoBom/config/security/TokenService.java
 /Users/david.fernandes/Documents/acelera/aceleratw-turma3-grupo3-api/src/main/java/br/com/carangobom/carangoBom/repository/UserRepository.java
 /Users/david.fernandes/Documents/acelera/aceleratw-turma3-grupo3-api/src/main/java/br/com/carangobom/carangoBom/controller/dto/TokenDto.java
-/Users/david.fernandes/Documents/acelera/aceleratw-turma3-grupo3-api/src/main/java/br/com/carangobom/carangoBom/model/User.java
