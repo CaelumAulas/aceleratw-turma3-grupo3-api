@@ -13,10 +13,10 @@ import java.util.Date;
 @Service
 public class TokenService {
 
-    @Value("${carango.jwt.expiration}")
+    @Value("${app.jwt.expiration}")
     private String expiration;
 
-    @Value("${carango.jwt.secret}")
+    @Value("${app.jwt.secret}")
     private String secret;
 
     public String tokenGenerate(Authentication authentication) {
