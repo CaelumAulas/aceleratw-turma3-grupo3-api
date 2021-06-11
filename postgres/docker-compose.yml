@@ -1,0 +1,10 @@
+version: '3'
+services: 
+    database:
+        image: postgres
+        environment:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: carango_bom
+          POSTGRES_USER: postgres
+        ports:
+          - 5432:5432
