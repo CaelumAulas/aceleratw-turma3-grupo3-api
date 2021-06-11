@@ -1,24 +1,26 @@
 package br.com.carangobom.carangoBom.config.security;
 
-import br.com.carangobom.carangoBom.model.User;
+import br.com.carangobom.carangoBom.model.Usuario;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 
+@Service
 public class TokenService {
 
-    @Value("${app.jwt.expiration}")
+    @Value("${carango.jwt.expiration}")
     private String expiration;
 
-    @Value("${app.jwt.secret}")
+    @Value("${carango.jwt.secret}")
     private String secret;
 
     public String tokenGenerate(Authentication authentication) {
-        User userLogged = (User) authentication.getPrincipal();
+        Usuario userLogged = (Usuario) authentication.getPrincipal();
         Date today = new Date();
         Date expireIn = new Date(today.getTime() + Long.parseLong(expiration));
 
