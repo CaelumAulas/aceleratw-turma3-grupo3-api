@@ -1,0 +1,11 @@
+br/com/carangobom/carangoBom/config/security/AuthService.class
+br/com/carangobom/carangoBom/config/security/AuthTokenFilter.class
+br/com/carangobom/carangoBom/config/security/SecurityConfiguration.class
+br/com/carangobom/carangoBom/controller/form/LoginForm.class
+br/com/carangobom/carangoBom/model/Profile.class
+br/com/carangobom/carangoBom/CarangoBomApplication.class
+br/com/carangobom/carangoBom/model/User.class
+br/com/carangobom/carangoBom/config/security/TokenService.class
+br/com/carangobom/carangoBom/repository/UserRepository.class
+br/com/carangobom/carangoBom/controller/dto/TokenDto.class
+br/com/carangobom/carangoBom/controller/AuthController.class
