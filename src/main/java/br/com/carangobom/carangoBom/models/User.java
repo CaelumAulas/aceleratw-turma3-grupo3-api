@@ -4,25 +4,23 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Getter
 @Setter
 @Entity
 @NoArgsConstructor
+@Table(name="Users")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String user;
+    private String name;
     private String password;
 
     public User(String usuario, String senha){
-        setUser(usuario);
+        setName(usuario);
         setPassword(senha);
     }
 
