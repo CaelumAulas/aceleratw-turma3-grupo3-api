@@ -1,6 +1,6 @@
 package br.com.carangobom.carangoBom.config.security;
 
-import br.com.carangobom.carangoBom.model.Usuario;
+import br.com.carangobom.carangoBom.model.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -20,7 +20,7 @@ public class TokenService {
     private String secret;
 
     public String tokenGenerate(Authentication authentication) {
-        Usuario userLogged = (Usuario) authentication.getPrincipal();
+        User userLogged = (User) authentication.getPrincipal();
         Date today = new Date();
         Date expireIn = new Date(today.getTime() + Long.parseLong(expiration));
 

@@ -1,6 +1,6 @@
 package br.com.carangobom.carangoBom.config.security;
 
-import br.com.carangobom.carangoBom.model.Usuario;
+import br.com.carangobom.carangoBom.model.User;
 import br.com.carangobom.carangoBom.repository.UserRepository;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -35,7 +35,7 @@ public class AuthTokenFilter extends OncePerRequestFilter {
 
     private void authUser(String token) {
         Long userId = tokenService.getUserById(token);
-        Usuario user = userRepository.findById(userId).get();
+        User user = userRepository.findById(userId).get();
         UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(user, null, user.getAuthorities());
         SecurityContextHolder.getContext().setAuthentication(authentication);
     }

@@ -9,7 +9,8 @@ import java.util.Collection;
 import java.util.List;
 
 @Entity
-public class Usuario implements UserDetails {
+@Table(name = "users")
+public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,7 +19,7 @@ public class Usuario implements UserDetails {
     private String password;
 
     @ManyToMany(fetch = FetchType.EAGER)
-    private List<Profile> perfis = new ArrayList();
+    private List<Profile> profiles = new ArrayList();
 
     @Override
     public int hashCode() {
@@ -36,7 +37,7 @@ public class Usuario implements UserDetails {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Usuario other = (Usuario) obj;
+        User other = (User) obj;
         if (id == null) {
             if (other.id != null)
                 return false;
@@ -51,7 +52,7 @@ public class Usuario implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return this.perfis;
+        return this.profiles;
     }
 
     @Override
