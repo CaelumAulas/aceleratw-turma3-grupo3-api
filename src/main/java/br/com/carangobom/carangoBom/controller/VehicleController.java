@@ -1,8 +1,7 @@
 package br.com.carangobom.carangoBom.controller;
 
 import br.com.carangobom.carangoBom.dto.VehicleDto;
-import br.com.carangobom.carangoBom.models.Brand;
-import br.com.carangobom.carangoBom.models.Vehicle;
+import br.com.carangobom.carangoBom.model.Vehicle;
 import br.com.carangobom.carangoBom.repository.VehiclesRepository;
 import lombok.AllArgsConstructor;
 import lombok.Data;

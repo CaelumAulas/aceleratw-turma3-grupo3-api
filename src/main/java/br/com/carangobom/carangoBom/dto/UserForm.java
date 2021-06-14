@@ -1,6 +1,6 @@
 package br.com.carangobom.carangoBom.dto;
 
-import br.com.carangobom.carangoBom.models.User;
+import br.com.carangobom.carangoBom.model.User;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;

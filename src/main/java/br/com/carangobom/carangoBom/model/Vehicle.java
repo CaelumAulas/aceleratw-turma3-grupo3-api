@@ -1,15 +1,14 @@
-package br.com.carangobom.carangoBom.models;
+package br.com.carangobom.carangoBom.model;
 
 
 import lombok.Data;
 
 import javax.persistence.*;
-import java.time.Year;
 
 
 @Data
 @Entity
-@Table(name = "vehicle")
+@Table(name = "vehicles")
 public class Vehicle {
 
     @Id

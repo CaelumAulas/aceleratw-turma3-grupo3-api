@@ -2,7 +2,7 @@ package br.com.carangobom.carangoBom.controller;
 
 import br.com.carangobom.carangoBom.dto.UserForm;
 import br.com.carangobom.carangoBom.dto.UserDto;
-import br.com.carangobom.carangoBom.models.User;
+import br.com.carangobom.carangoBom.model.User;
 import br.com.carangobom.carangoBom.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

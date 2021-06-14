@@ -1,4 +1,4 @@
-package br.com.carangobom.carangoBom.models;
+package br.com.carangobom.carangoBom.model;
 
 
 import br.com.carangobom.carangoBom.dto.VehicleDto;
@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Data
 @Entity
 
-
+@Table(name = "brands")
 public class Brand {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
