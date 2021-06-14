@@ -1,6 +1,7 @@
 package br.com.carangobom.carangoBom.controller;
 
 import br.com.carangobom.carangoBom.dto.VehicleDto;
+import br.com.carangobom.carangoBom.models.Brand;
 import br.com.carangobom.carangoBom.models.Vehicle;
 import br.com.carangobom.carangoBom.repository.VehiclesRepository;
 import lombok.AllArgsConstructor;
@@ -51,10 +52,16 @@ public class VehicleController {
     @DeleteMapping("/{id}")
     @Transactional
     public ResponseEntity delete(@PathVariable Long id){
-        vehiclesRepository.deleteById(id);
-        return (ResponseEntity.ok().build());
+        Optional<Vehicle> vehicle = vehiclesRepository.findById(id);
+        if (vehicle.isPresent()) {
+            vehiclesRepository.deleteById(id);
+            return (ResponseEntity.ok().build());
+        }
+        return ResponseEntity.notFound().build();
+
     }
 
+      
 
 
 
