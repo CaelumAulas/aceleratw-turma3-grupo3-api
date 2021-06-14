@@ -15,6 +15,9 @@ public class Vehicle {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String model;
+    private int years;
+    private Double price;
 
     @ManyToOne()
 	private Brand brand;
@@ -24,9 +27,7 @@ public class Vehicle {
     }
 
 
-    private String model;
-    private int years;
-    private Double price;
+
 
 
 }
