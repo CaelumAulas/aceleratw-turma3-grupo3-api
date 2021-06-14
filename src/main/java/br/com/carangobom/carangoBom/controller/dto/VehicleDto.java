@@ -1,12 +1,9 @@
-package br.com.carangobom.carangoBom.dto;
+package br.com.carangobom.carangoBom.controller.dto;
 
-import br.com.carangobom.carangoBom.models.Vehicle;
+import br.com.carangobom.carangoBom.model.Vehicle;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.domain.Page;
-
-import java.time.Year;
-import java.util.List;
 
 @Getter
 @Setter

@@ -1,10 +1,9 @@
-package br.com.carangobom.carangoBom.models;
+package br.com.carangobom.carangoBom.model;
 
 
 import lombok.Data;
 
 import javax.persistence.*;
-import java.time.Year;
 
 
 @Data
@@ -21,6 +20,13 @@ public class Vehicle {
 
     @ManyToOne()
 	private Brand brand;
+
+    public Vehicle(Brand brand, String model, int years, Double price) {
+        this.brand= brand;
+        this.model = model;
+        this.years = years;
+        this.price = price;
+    }
 
     public Vehicle(){
 
