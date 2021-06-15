@@ -1,6 +1,6 @@
 package br.com.carangobom.carangoBom.repository;
 
-import br.com.carangobom.carangoBom.models.Vehicle;
+import br.com.carangobom.carangoBom.model.Vehicle;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

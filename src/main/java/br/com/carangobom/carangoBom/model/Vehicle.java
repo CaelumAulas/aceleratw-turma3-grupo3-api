@@ -1,10 +1,10 @@
-package br.com.carangobom.carangoBom.models;
+package br.com.carangobom.carangoBom.model;
 
 
+import br.com.carangobom.carangoBom.model.Brand;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.time.Year;
 
 
 @Data
