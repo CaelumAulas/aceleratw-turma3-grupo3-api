@@ -1,6 +1,6 @@
 package br.com.carangobom.carangoBom.controller;
 
-import br.com.carangobom.carangoBom.dto.BrandDto;
+import br.com.carangobom.carangoBom.controller.dto.BrandDto;
 import br.com.carangobom.carangoBom.model.Brand;
 import br.com.carangobom.carangoBom.repository.BrandRepository;
 import br.com.carangobom.carangoBom.repository.VehiclesRepository;

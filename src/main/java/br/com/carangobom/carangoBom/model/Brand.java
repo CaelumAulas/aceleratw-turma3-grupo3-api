@@ -1,7 +1,6 @@
 package br.com.carangobom.carangoBom.model;
 
 
-import br.com.carangobom.carangoBom.dto.VehicleDto;
 import lombok.Data;
 
 import javax.persistence.*;

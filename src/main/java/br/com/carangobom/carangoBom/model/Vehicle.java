@@ -21,6 +21,13 @@ public class Vehicle {
     @ManyToOne()
 	private Brand brand;
 
+    public Vehicle(Brand brand, String model, int years, Double price) {
+        this.brand= brand;
+        this.model = model;
+        this.years = years;
+        this.price = price;
+    }
+
     public Vehicle(){
 
     }
