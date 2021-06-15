@@ -20,7 +20,7 @@ public class SwaggerConfigurations {
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("br.com.alura.forum"))
+                .apis(RequestHandlerSelectors.basePackage("br.com.carangobom.carangoBom"))
                 .paths(PathSelectors.ant("/**"))
                 .build()
                 .ignoredParameterTypes(User.class)
