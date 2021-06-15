@@ -1,5 +1,8 @@
 package br.com.carangobom.carangoBom.model;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -8,9 +11,17 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
 @Table(name = "users")
 public class User implements UserDetails {
+
+    public User(String email, String password){
+        setEmail(email);
+        setPassword(password);
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
