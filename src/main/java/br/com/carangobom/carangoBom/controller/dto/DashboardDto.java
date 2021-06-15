@@ -2,6 +2,7 @@ package br.com.carangobom.carangoBom.controller.dto;
 
 import br.com.carangobom.carangoBom.model.TotalByBrand;
 import br.com.carangobom.carangoBom.model.Vehicle;
+import br.com.carangobom.carangoBom.util.Formatter;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
@@ -35,7 +36,7 @@ public class DashboardDto {
         ArrayList<TotalByBrand> brands = new ArrayList<TotalByBrand>();
 
         for(String brandName : this.totalByBrands.keySet()){
-            brands.add(new TotalByBrand(brandName, this.totalByBrands.get(brandName)));
+            brands.add(new TotalByBrand(brandName, Formatter.roundAvoid(this.totalByBrands.get(brandName), 2)));
         }
 
         return brands;
