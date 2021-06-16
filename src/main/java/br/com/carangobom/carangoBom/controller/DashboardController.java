@@ -1,6 +1,6 @@
 package br.com.carangobom.carangoBom.controller;
 
-import br.com.carangobom.carangoBom.controller.dto.DashboardDto;
+import br.com.carangobom.carangoBom.dto.DashboardDto;
 import br.com.carangobom.carangoBom.model.TotalByBrand;
 import br.com.carangobom.carangoBom.model.Vehicle;
 import br.com.carangobom.carangoBom.repository.VehiclesRepository;
