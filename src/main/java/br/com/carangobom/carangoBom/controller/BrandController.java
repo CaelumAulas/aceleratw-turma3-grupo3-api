@@ -25,10 +25,9 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/brand")
 public class BrandController {
-
-
     BrandRepository brandRepository;
     VehiclesRepository vehiclesRepository;
+
     @GetMapping
     public Page<BrandDto> listBrands(@PageableDefault(page=0,size = 10) Pageable paginacao) {
 
@@ -48,8 +47,6 @@ public class BrandController {
             return ResponseEntity.ok(brandDto);
 
         }
-
-
         return ResponseEntity.notFound().build();
     }
 
@@ -83,21 +80,9 @@ public class BrandController {
 
     @PostMapping
     public ResponseEntity<BrandDto> registerBrand(@RequestBody @Valid BrandForm brandForm, UriComponentsBuilder uriComponentsBuilder){
-
             Brand brand= brandForm.convert();
             brandRepository.save(brand);
             URI uri = uriComponentsBuilder.path("/brand/{id}").buildAndExpand(brand.getId()).toUri();
             return ResponseEntity.created(uri).body(new BrandDto(brand));
-
-
-
-
     }
-
-
-
-
-
-
-
 }

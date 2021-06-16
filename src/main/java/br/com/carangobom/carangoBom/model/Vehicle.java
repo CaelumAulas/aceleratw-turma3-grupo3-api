@@ -1,6 +1,7 @@
 package br.com.carangobom.carangoBom.model;
 
 
+import br.com.carangobom.carangoBom.model.Brand;
 import lombok.Data;
 
 import javax.persistence.*;

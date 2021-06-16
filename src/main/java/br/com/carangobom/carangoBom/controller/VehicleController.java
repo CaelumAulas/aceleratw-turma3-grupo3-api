@@ -22,20 +22,17 @@ import javax.validation.Valid;
 import java.net.URI;
 import java.util.Optional;
 
-
 @Data
 @RestController
 @RequestMapping("/vehicle")
 @AllArgsConstructor
-
 public class VehicleController {
-
 
     @Autowired
     VehiclesRepository vehiclesRepository;
+
     @Autowired
     BrandRepository brandRepository;
-
 
     @GetMapping
     public Page<VehicleDto> listVehicles(@PageableDefault(page=0,size = 10) Pageable paginacao) {
@@ -54,11 +51,8 @@ public class VehicleController {
          return ResponseEntity.ok(vehicleDto);
 
         }
-
         return ResponseEntity.notFound().build();
     }
-
-
 
     @DeleteMapping("/{id}")
     @Transactional
@@ -69,7 +63,6 @@ public class VehicleController {
             return (ResponseEntity.ok().build());
         }
         return ResponseEntity.notFound().build();
-
     }
 
     @PutMapping("/{id}")
@@ -84,7 +77,6 @@ public class VehicleController {
 
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
         }
-
     }
 
     @PostMapping
@@ -97,12 +89,5 @@ public class VehicleController {
         } catch (Exception e){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
-
-
     }
-      
-
-
-
-
 }
