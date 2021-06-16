@@ -1,8 +1,8 @@
 package br.com.carangobom.carangoBom.controller;
 
 import br.com.carangobom.carangoBom.config.security.TokenService;
-import br.com.carangobom.carangoBom.controller.dto.TokenDto;
-import br.com.carangobom.carangoBom.controller.form.LoginForm;
+import br.com.carangobom.carangoBom.dto.TokenDto;
+import br.com.carangobom.carangoBom.form.LoginForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;

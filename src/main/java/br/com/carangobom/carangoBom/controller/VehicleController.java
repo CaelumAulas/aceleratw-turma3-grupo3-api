@@ -1,8 +1,8 @@
 package br.com.carangobom.carangoBom.controller;
 
-import br.com.carangobom.carangoBom.controller.dto.VehicleDto;
-import br.com.carangobom.carangoBom.controller.form.UpdateVehicleForm;
-import br.com.carangobom.carangoBom.controller.form.VehicleForm;
+import br.com.carangobom.carangoBom.dto.VehicleDto;
+import br.com.carangobom.carangoBom.form.UpdateVehicleForm;
+import br.com.carangobom.carangoBom.form.VehicleForm;
 import br.com.carangobom.carangoBom.model.Vehicle;
 import br.com.carangobom.carangoBom.repository.BrandRepository;
 import br.com.carangobom.carangoBom.repository.VehiclesRepository;

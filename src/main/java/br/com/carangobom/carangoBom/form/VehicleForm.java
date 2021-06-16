@@ -1,9 +1,8 @@
-package br.com.carangobom.carangoBom.controller.form;
+package br.com.carangobom.carangoBom.form;
 
 import br.com.carangobom.carangoBom.model.Brand;
 import br.com.carangobom.carangoBom.model.Vehicle;
 import br.com.carangobom.carangoBom.repository.BrandRepository;
-import javassist.NotFoundException;
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;
 import javax.validation.constraints.Max;
