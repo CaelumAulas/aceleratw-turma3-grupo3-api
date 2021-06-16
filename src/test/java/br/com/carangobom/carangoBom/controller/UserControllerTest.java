@@ -35,7 +35,7 @@ public class UserControllerTest {
     }
 
     @Test
-    public void shouldCreateuser() throws Exception {
+    public void shouldCreateUser() throws Exception {
         URI uri = new URI("/users");
         String json = "{\"user\":\"invalido@email.com\",\"password\":\"123456\"}";
 
