@@ -20,8 +20,6 @@ import java.net.URI;
 @AutoConfigureMockMvc
 @Transactional
 @ActiveProfiles("test")
-
-
 public class VehicleControllerTest {
     @Autowired
     private MockMvc mockMvc;

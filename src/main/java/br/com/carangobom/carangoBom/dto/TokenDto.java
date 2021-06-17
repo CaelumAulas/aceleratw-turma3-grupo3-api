@@ -1,4 +1,4 @@
-package br.com.carangobom.carangoBom.controller.dto;
+package br.com.carangobom.carangoBom.dto;
 
 public class TokenDto {
 

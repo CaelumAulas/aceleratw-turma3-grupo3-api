@@ -1,13 +1,14 @@
 package br.com.carangobom.carangoBom.controller;
 
-import br.com.carangobom.carangoBom.controller.dto.BrandDto;
+
+
+import br.com.carangobom.carangoBom.dto.BrandDto;
 import br.com.carangobom.carangoBom.form.BrandForm;
-import br.com.carangobom.carangoBom.controller.form.UpdateBrandForm;
+import br.com.carangobom.carangoBom.form.UpdateBrandForm;
+
 import br.com.carangobom.carangoBom.model.Brand;
 import br.com.carangobom.carangoBom.repository.BrandRepository;
 import br.com.carangobom.carangoBom.repository.VehiclesRepository;
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import org.springframework.data.domain.*;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
@@ -20,8 +21,6 @@ import javax.validation.Valid;
 import java.net.URI;
 import java.util.Optional;
 
-@Data
-@AllArgsConstructor
 @RestController
 @RequestMapping("/brand")
 public class BrandController {
@@ -39,8 +38,6 @@ public class BrandController {
 
     @GetMapping("/{id}")
     public ResponseEntity<?> getBrandById(@PathVariable Long id) {
-
-
         Optional<Brand> brand = brandRepository.findById(id);
         if(brand.isPresent()){
             BrandDto brandDto = new BrandDto(brand.get());
