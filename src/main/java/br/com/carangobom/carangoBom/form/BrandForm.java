@@ -1,7 +1,6 @@
 package br.com.carangobom.carangoBom.form;
 
 import br.com.carangobom.carangoBom.model.Brand;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -21,8 +20,6 @@ public class BrandForm {
     }
 
     public Brand convert() {
-
-
         return new Brand(name);
     }
 }
