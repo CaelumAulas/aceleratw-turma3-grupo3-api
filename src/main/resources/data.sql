@@ -1,6 +1,8 @@
+insert 	into brands(name)
+values ('Ford'),
+('Volks'),
+('Nissan');
 
-
-
- INSERT into brand (name) values("ford");
- INSERT into vehicle (brand_id,model,price,years) values(1,"teste",123.0,2021);
- INSERT into vehicle (brand_id,model,price,years) values(1,"Uno com escada",1232.0,2021);
+insert into vehicles (model, price, years, brand_id)
+values ('Gol', 1000.00, 2010, 1),
+('Uno', 2000.00, 2011, 2);

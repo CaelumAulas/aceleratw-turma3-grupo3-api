@@ -3,7 +3,7 @@ package br.com.carangobom.carangoBom.form;
 import br.com.carangobom.carangoBom.model.Brand;
 import br.com.carangobom.carangoBom.model.Vehicle;
 import br.com.carangobom.carangoBom.repository.BrandRepository;
-import lombok.Data;
+import lombok.Getter;
 import org.hibernate.validator.constraints.Length;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -11,7 +11,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.Optional;
 
-@Data
+@Getter
 public class VehicleForm {
     @NotNull
     private Long brand_id;

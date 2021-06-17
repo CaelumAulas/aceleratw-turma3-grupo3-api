@@ -71,7 +71,7 @@ public class VehicleController {
         try{
             Vehicle vehicle = updateVehicleForm.updateVehicle(id, vehiclesRepository);
 
-            URI uri = uriComponentsBuilder.path("/topicos/{id}").buildAndExpand(vehicle.getId()).toUri();
+            URI uri = uriComponentsBuilder.path("/vehicle/{id}").buildAndExpand(vehicle.getId()).toUri();
             return ResponseEntity.ok(new VehicleDto(vehicle));
         }catch (Exception e){
 
