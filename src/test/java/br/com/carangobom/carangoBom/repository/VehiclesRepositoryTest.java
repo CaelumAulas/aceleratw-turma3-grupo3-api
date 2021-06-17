@@ -38,7 +38,7 @@ public class VehiclesRepositoryTest {
 
     @Test
     public void ShouldNotReturnVehicleById() {
-        
+
         Optional<Vehicle> vehicles = vehiclesRepository.findById(6l);
         Assert.assertFalse(vehicles.isPresent());
 
