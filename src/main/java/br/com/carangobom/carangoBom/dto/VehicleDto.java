@@ -12,6 +12,7 @@ public class VehicleDto {
     private String brand;
     private String model;
     private int year;
+    private double price;
 
 
     public VehicleDto(Vehicle vehicle) {
@@ -19,6 +20,7 @@ public class VehicleDto {
         this.brand = vehicle.getBrand().getName();
         this.model = vehicle.getModel();
         this.year = vehicle.getYears();
+        this.price = vehicle.getPrice();
     }
 
     public static Page<VehicleDto> converter(Page<Vehicle> vehicles) {
