@@ -1,4 +1,4 @@
-package br.com.carangobom.carangoBom.form;
+package br.com.carangobom.carangoBom.controller.form;
 
 import br.com.carangobom.carangoBom.model.Brand;
 import lombok.Getter;
