@@ -1,11 +1,9 @@
 package br.com.carangobom.carangoBom.controller;
 
-import br.com.carangobom.carangoBom.controller.dto.DashboardDto;
+import br.com.carangobom.carangoBom.dto.DashboardDto;
 import br.com.carangobom.carangoBom.model.TotalByBrand;
 import br.com.carangobom.carangoBom.model.Vehicle;
 import br.com.carangobom.carangoBom.repository.VehiclesRepository;
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,10 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@Data
 @RestController
 @RequestMapping("/dashboard")
-@AllArgsConstructor
 public class DashboardController {
 
     @Autowired

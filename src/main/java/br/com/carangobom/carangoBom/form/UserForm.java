@@ -1,4 +1,4 @@
-package br.com.carangobom.carangoBom.dto;
+package br.com.carangobom.carangoBom.form;
 
 import br.com.carangobom.carangoBom.model.User;
 import lombok.Getter;
