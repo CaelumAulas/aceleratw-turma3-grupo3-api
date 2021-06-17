@@ -1,8 +1,7 @@
 package br.com.carangobom.carangoBom.model;
 
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -11,8 +10,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @Entity
 @Table(name = "users")
@@ -55,10 +53,6 @@ public class User implements UserDetails {
         } else if (!id.equals(other.id))
             return false;
         return true;
-    }
-
-    public Long getId() {
-        return id;
     }
 
     @Override

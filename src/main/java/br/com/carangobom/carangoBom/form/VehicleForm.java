@@ -1,4 +1,4 @@
-package br.com.carangobom.carangoBom.controller.form;
+package br.com.carangobom.carangoBom.form;
 
 import br.com.carangobom.carangoBom.model.Brand;
 import br.com.carangobom.carangoBom.model.Vehicle;

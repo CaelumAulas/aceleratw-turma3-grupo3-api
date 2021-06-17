@@ -1,13 +1,11 @@
 package br.com.carangobom.carangoBom.controller;
 
-import br.com.carangobom.carangoBom.controller.dto.VehicleDto;
-import br.com.carangobom.carangoBom.controller.form.UpdateVehicleForm;
-import br.com.carangobom.carangoBom.controller.form.VehicleForm;
+import br.com.carangobom.carangoBom.dto.VehicleDto;
+import br.com.carangobom.carangoBom.form.UpdateVehicleForm;
+import br.com.carangobom.carangoBom.form.VehicleForm;
 import br.com.carangobom.carangoBom.model.Vehicle;
 import br.com.carangobom.carangoBom.repository.BrandRepository;
 import br.com.carangobom.carangoBom.repository.VehiclesRepository;
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -22,10 +20,8 @@ import javax.validation.Valid;
 import java.net.URI;
 import java.util.Optional;
 
-@Data
 @RestController
 @RequestMapping("/vehicle")
-@AllArgsConstructor
 public class VehicleController {
 
     @Autowired

@@ -1,4 +1,4 @@
-package br.com.carangobom.carangoBom.controller.dto;
+package br.com.carangobom.carangoBom.dto;
 
 import br.com.carangobom.carangoBom.model.Brand;
 import lombok.Getter;
