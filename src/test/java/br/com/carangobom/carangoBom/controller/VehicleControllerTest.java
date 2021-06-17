@@ -40,7 +40,7 @@ public class VehicleControllerTest {
     }
 
     @Test
-    public void shouldBeDisableToDeleteMissingVehicleAndReturnStatusCode404() throws Exception {
+    public void shouldBeDisableToDeleteInexistingVehicleAndReturnStatusCode404() throws Exception {
         URI uri = new URI("/vehicle/1222");
         mockMvc
                 .perform(MockMvcRequestBuilders
@@ -153,7 +153,7 @@ public class VehicleControllerTest {
         mockMvc
                 .perform(MockMvcRequestBuilders
                         .post(uri)
-                        .content("{ \"brand_id\":\"1212121\", \"model\":\"Fuskaa\",\"year\":1200 ,\"price\":-10.00 }")
+                        .content("{ \"brand_id\":\"1\", \"model\":\"\",\"year\":1200 ,\"price\":-10.00 }")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers
                         .status()
