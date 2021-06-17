@@ -40,7 +40,7 @@ public class VehicleControllerTest {
     }
 
     @Test
-    public void shouldBeDisableToDeleteInexistingVehicleAndReturnStatusCode404() throws Exception {
+    public void shouldBeDisableToDeleteMissingVehicleAndReturnStatusCode404() throws Exception {
         URI uri = new URI("/vehicle/1222");
         mockMvc
                 .perform(MockMvcRequestBuilders
