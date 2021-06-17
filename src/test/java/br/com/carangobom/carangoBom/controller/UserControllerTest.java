@@ -13,11 +13,14 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+
+import javax.transaction.Transactional;
 import java.net.URI;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
+@Transactional
 @ActiveProfiles("test")
 public class UserControllerTest {
 
@@ -30,10 +33,10 @@ public class UserControllerTest {
 
         mockMvc
             .perform(MockMvcRequestBuilders
-                    .get(uri))
+                .get(uri))
             .andExpect(MockMvcResultMatchers
-                    .status()
-                    .is(200));
+                .status()
+                .is(200));
     }
 
     @Test
@@ -43,12 +46,24 @@ public class UserControllerTest {
 
         mockMvc
             .perform(MockMvcRequestBuilders
-                    .post(uri)
-                    .content(json)
-                    .contentType(MediaType.APPLICATION_JSON))
+                .post(uri)
+                .content(json)
+                .contentType(MediaType.APPLICATION_JSON))
             .andExpect(MockMvcResultMatchers
-                    .status()
-                    .is(201));
+                .status()
+                .is(201));
+    }
+
+    @Test
+    public void shouldBeAbleToDeleteVehicleAndReturnStatusCode200() throws Exception {
+        URI uri = new URI("/users/1");
+
+        mockMvc
+            .perform(MockMvcRequestBuilders
+                .delete(uri))
+            .andExpect(MockMvcResultMatchers
+                .status()
+                .is(200));
     }
 
     @Test
@@ -59,12 +74,12 @@ public class UserControllerTest {
 
         MvcResult result = mockMvc
             .perform(MockMvcRequestBuilders
-                    .post(uri)
-                    .content(json)
-                    .contentType(MediaType.APPLICATION_JSON))
+                .post(uri)
+                .content(json)
+                .contentType(MediaType.APPLICATION_JSON))
             .andExpect(MockMvcResultMatchers
-                    .status()
-                    .is(400))
+                .status()
+                .is(400))
             .andReturn();
 
         String responseContent = result.getResponse().getContentAsString();
@@ -80,12 +95,12 @@ public class UserControllerTest {
 
         MvcResult result = mockMvc
                 .perform(MockMvcRequestBuilders
-                        .post(uri)
-                        .content(json)
-                        .contentType(MediaType.APPLICATION_JSON))
+                    .post(uri)
+                    .content(json)
+                    .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers
-                        .status()
-                        .is(400))
+                    .status()
+                    .is(400))
                 .andReturn();
 
         String responseContent = result.getResponse().getContentAsString();
