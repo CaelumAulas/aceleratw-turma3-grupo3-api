@@ -6,12 +6,12 @@ import javax.validation.constraints.NotNull;
 
 
 public class BrandForm {
+
     @NotNull
     @NotEmpty
-
     private String name;
 
-    public BrandForm(String name) {
+    public BrandForm( String name) {
         this.name = name;
     }
 

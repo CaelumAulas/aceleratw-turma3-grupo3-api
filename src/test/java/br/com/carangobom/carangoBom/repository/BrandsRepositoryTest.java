@@ -1,6 +1,9 @@
 package br.com.carangobom.carangoBom.repository;
 
+import br.com.carangobom.carangoBom.model.Brand;
 import br.com.carangobom.carangoBom.model.Vehicle;
+import org.junit.Assert;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -8,8 +11,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.junit.Assert;
-import org.junit.Test;
+
 import java.util.Optional;
 
 
@@ -19,9 +21,9 @@ import java.util.Optional;
 @ActiveProfiles("test")
 
 
-public class VehiclesRepositoryTest {
+public class BrandsRepositoryTest {
     @Autowired
-    private VehiclesRepository vehiclesRepository;
+    private BrandRepository brandRepository;
     @Autowired
     private TestEntityManager testEntityManager;
 
@@ -29,18 +31,18 @@ public class VehiclesRepositoryTest {
    public void ShouldReturnVehicleById() {
 
 
-        Vehicle vehicle =  new Vehicle();
-        testEntityManager.persist(vehicle);
-        Optional<Vehicle> vehicle1 = vehiclesRepository.findById(1l);
-        Assert.assertNotNull(vehicle1);
+        Brand brand =  new Brand();
+        testEntityManager.persist(brand);
+        Optional<Brand> brand1 = brandRepository.findById(1l);
+        Assert.assertNotNull(brand1);
 
     }
 
     @Test
     public void ShouldNotReturnVehicleById() {
 
-        Optional<Vehicle> vehicles = vehiclesRepository.findById(6l);
-        Assert.assertFalse(vehicles.isPresent());
+        Optional<Brand> brands = brandRepository.findById(6l);
+        Assert.assertFalse(brands.isPresent());
 
     }
 
