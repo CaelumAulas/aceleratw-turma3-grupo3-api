@@ -26,12 +26,12 @@ public class UserControllerWithoutAuthTest {
         String json = "{\"user\":\"invalido@email.com\",\"password\":\"123456\"}";
 
         mockMvc
-                .perform(MockMvcRequestBuilders
-                        .post(uri)
-                        .content(json)
-                        .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(MockMvcResultMatchers
-                        .status()
-                        .is(403));
+            .perform(MockMvcRequestBuilders
+                    .post(uri)
+                    .content(json)
+                    .contentType(MediaType.APPLICATION_JSON))
+            .andExpect(MockMvcResultMatchers
+                    .status()
+                    .is(403));
     }
 }
