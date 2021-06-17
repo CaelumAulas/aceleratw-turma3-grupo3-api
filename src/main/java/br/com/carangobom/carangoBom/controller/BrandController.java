@@ -67,10 +67,14 @@ public class BrandController {
     @Transactional
     public ResponseEntity<?> update(@PathVariable Long id, @RequestBody @Valid UpdateBrandForm updateBrandForm, UriComponentsBuilder uriComponentsBuilder){
         try{
-            Brand brand = updateBrandForm.updateBrand(id, brandRepository);
 
-            URI uri = uriComponentsBuilder.path("/brand/{id}").buildAndExpand(brand.getId()).toUri();
-            return ResponseEntity.ok(new BrandDto(brand));
+            Optional<Brand> brand = brandRepository.findById(id);
+            if(brand.isPresent()) {
+                updateBrandForm.updateBrand(id, brandRepository);
+                URI uri = uriComponentsBuilder.path("/brand/{id}").buildAndExpand(brand.get().getId()).toUri();
+                return ResponseEntity.ok(new BrandDto(brand.get()));
+            }
+            return ResponseEntity.notFound().build();
         }catch (Exception e){
 
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
