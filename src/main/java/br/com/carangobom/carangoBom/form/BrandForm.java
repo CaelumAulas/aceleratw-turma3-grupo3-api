@@ -1,10 +1,14 @@
 package br.com.carangobom.carangoBom.form;
 
 import br.com.carangobom.carangoBom.model.Brand;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
-
+@Getter
+@NoArgsConstructor
 public class BrandForm {
     @NotNull
     @NotEmpty
@@ -16,8 +20,6 @@ public class BrandForm {
     }
 
     public Brand convert() {
-
-
         return new Brand(name);
     }
 }

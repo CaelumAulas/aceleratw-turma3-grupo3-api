@@ -6,7 +6,6 @@ import lombok.Data;
 import javax.persistence.*;
 @Data
 @Entity
-
 @Table(name = "brands")
 public class Brand {
     @Id
