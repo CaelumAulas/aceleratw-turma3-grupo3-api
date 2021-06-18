@@ -15,19 +15,21 @@ import java.util.List;
 @Setter
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class DashboardDto {
-    private HashMap<String, Double> totalByBrands;
+    private HashMap<Long, TotalByBrand> totalByBrands = new HashMap<Long, TotalByBrand>();
 
     public DashboardDto(List<Vehicle> vehicles) {
-       this.totalByBrands =  new HashMap<String, Double>();
-
        for(Vehicle vehicle: vehicles){
+           Long brandId = vehicle.getBrand().getId();
            String brandName = vehicle.getBrand().getName();
            double price = vehicle.getPrice();
 
-           if(!this.totalByBrands.containsKey(brandName)){
-               this.totalByBrands.put(brandName, price);
+           if(!this.totalByBrands.containsKey(brandId)){
+               this.totalByBrands.put(brandId, new TotalByBrand(brandName, 1, price));
            }else {
-               this.totalByBrands.put(brandName, this.totalByBrands.get(brandName) + price);
+               TotalByBrand currentValue = this.totalByBrands.get(brandId);
+               currentValue.setAmount(Formatter.roundAvoid(currentValue.getAmount() + price, 2));
+               currentValue.setTotalVehicles(currentValue.getTotalVehicles() + 1);
+               this.totalByBrands.put(brandId,currentValue);
            }
        }
     }
@@ -35,8 +37,8 @@ public class DashboardDto {
     public List<TotalByBrand> getTotalByBrands() {
         ArrayList<TotalByBrand> brands = new ArrayList<TotalByBrand>();
 
-        for(String brandName : this.totalByBrands.keySet()){
-            brands.add(new TotalByBrand(brandName, Formatter.roundAvoid(this.totalByBrands.get(brandName), 2)));
+        for(Long brandId : this.totalByBrands.keySet()){
+            brands.add(this.totalByBrands.get(brandId));
         }
 
         return brands;

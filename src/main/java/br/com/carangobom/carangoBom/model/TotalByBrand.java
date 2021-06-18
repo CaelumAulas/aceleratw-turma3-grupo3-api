@@ -7,5 +7,6 @@ import lombok.Data;
 @AllArgsConstructor
 public class TotalByBrand {
     private String brandName;
+    private int totalVehicles;
     private double amount;
 }
