@@ -90,7 +90,7 @@ public class BrandControllerTest {
         mockMvc
                 .perform(MockMvcRequestBuilders
                         .put(uri)
-                        .content(" \"name\":\"Nissan\" ")
+                        .content("{ \"name\":\"Nissan\"} ")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers
                         .status()
@@ -102,7 +102,7 @@ public class BrandControllerTest {
         mockMvc
                 .perform(MockMvcRequestBuilders
                         .put(uri)
-                        .content("  \"\" ")
+                        .content("{ \"name\":\"\"} ")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers
                         .status()
@@ -115,7 +115,7 @@ public class BrandControllerTest {
         mockMvc
                 .perform(MockMvcRequestBuilders
                         .put(uri)
-                        .content(" \"name\":\"Nissan\" ")
+                        .content("{ \"name\":\"Nissan\"} ")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers
                         .status()
@@ -130,7 +130,7 @@ public class BrandControllerTest {
         mockMvc
                 .perform(MockMvcRequestBuilders
                         .post(uri)
-                        .content(" \"name\":\"Nissan\" ")
+                        .content("{ \"name\":\"Nissan\"} ")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers
                         .status()
@@ -143,7 +143,7 @@ public class BrandControllerTest {
         mockMvc
                 .perform(MockMvcRequestBuilders
                         .post(uri)
-                        .content("  \"\" ")
+                        .content("{ \"name\":\"\"} ")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers
                         .status()

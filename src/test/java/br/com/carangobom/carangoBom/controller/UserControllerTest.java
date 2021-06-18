@@ -42,7 +42,7 @@ public class UserControllerTest {
     @Test
     public void shouldCreateUser() throws Exception {
         URI uri = new URI("/users");
-        String json = "{\"user\":\"invalido@email.com\",\"password\":\"123456\"}";
+        String json = "{\"user\":\"created@email.com\",\"password\":\"123456\"}";
 
         mockMvc
             .perform(MockMvcRequestBuilders
