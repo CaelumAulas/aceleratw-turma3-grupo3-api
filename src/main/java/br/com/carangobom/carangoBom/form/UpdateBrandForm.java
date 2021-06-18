@@ -2,10 +2,14 @@ package br.com.carangobom.carangoBom.form;
 
 import br.com.carangobom.carangoBom.model.Brand;
 import br.com.carangobom.carangoBom.repository.BrandRepository;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.Optional;
-
+@Getter
+@NoArgsConstructor
 public class UpdateBrandForm {
 
 
