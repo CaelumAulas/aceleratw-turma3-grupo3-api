@@ -27,7 +27,7 @@ import java.util.Optional;
 public class BrandController {
     @Autowired
     BrandRepository brandRepository;
- 
+
 
     @GetMapping
     public Page<BrandDto> listBrands(@PageableDefault(page=0,size = 10) Pageable paginacao) {
