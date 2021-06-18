@@ -9,6 +9,7 @@ import br.com.carangobom.carangoBom.form.UpdateBrandForm;
 import br.com.carangobom.carangoBom.model.Brand;
 import br.com.carangobom.carangoBom.repository.BrandRepository;
 import br.com.carangobom.carangoBom.repository.VehiclesRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.*;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
@@ -24,8 +25,9 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/brand")
 public class BrandController {
+    @Autowired
     BrandRepository brandRepository;
-    VehiclesRepository vehiclesRepository;
+ 
 
     @GetMapping
     public Page<BrandDto> listBrands(@PageableDefault(page=0,size = 10) Pageable paginacao) {
