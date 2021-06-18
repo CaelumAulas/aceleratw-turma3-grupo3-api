@@ -1,5 +1,6 @@
 package br.com.carangobom.carangoBom.controller;
 
+import br.com.carangobom.carangoBom.dto.VehicleDetailedDto;
 import br.com.carangobom.carangoBom.dto.VehicleDto;
 import br.com.carangobom.carangoBom.form.UpdateVehicleForm;
 import br.com.carangobom.carangoBom.form.VehicleForm;
@@ -43,8 +44,8 @@ public class VehicleController {
 
         Optional<Vehicle> vehicle = vehiclesRepository.findById(id);
         if(vehicle.isPresent()){
-         VehicleDto vehicleDto= new VehicleDto(vehicle.get());
-         return ResponseEntity.ok(vehicleDto);
+         VehicleDetailedDto vehicleDetailedDto= new VehicleDetailedDto(vehicle.get());
+         return ResponseEntity.ok(vehicleDetailedDto);
 
         }
         return ResponseEntity.notFound().build();
