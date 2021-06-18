@@ -66,7 +66,7 @@ public class VehicleController {
     @Transactional
     public ResponseEntity<?> update(@PathVariable Long id, @RequestBody @Valid UpdateVehicleForm updateVehicleForm, UriComponentsBuilder uriComponentsBuilder){
         try{
-            Vehicle vehicle = updateVehicleForm.updateVehicle(id, vehiclesRepository);
+            Vehicle vehicle = updateVehicleForm.updateVehicle(id, vehiclesRepository,brandRepository);
 
             URI uri = uriComponentsBuilder.path("/vehicle/{id}").buildAndExpand(vehicle.getId()).toUri();
             return ResponseEntity.ok(new VehicleDto(vehicle));

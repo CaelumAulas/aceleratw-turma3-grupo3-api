@@ -88,7 +88,8 @@ public class VehicleControllerTest {
         mockMvc
                 .perform(MockMvcRequestBuilders
                         .put(uri)
-                        .content("{  \"model\":\"Fusla\",\"year\":2020 ,\"price\":10000.00 }")
+                        //"brandId":"1",
+                        .content("{  \"model\":\"Fusla\",\"year\":2020 ,\"brand_id\":\"1\",\"price\":10000.00 }")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers
                         .status()
@@ -100,7 +101,7 @@ public class VehicleControllerTest {
         mockMvc
                 .perform(MockMvcRequestBuilders
                         .put(uri)
-                        .content("{  \"model\":\"Fuskaa\",\"year\":1000 ,\"price\":-10.00 }")
+                        .content("{  \"model\":\"Fusla\",\"year\":2020 ,\"brand_id\":\"1\",\"price\":-10000.00 }")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers
                         .status()
@@ -113,7 +114,19 @@ public class VehicleControllerTest {
         mockMvc
                 .perform(MockMvcRequestBuilders
                         .put(uri)
-                        .content("{  \"model\":\"Fuskaa\",\"year\":2020 ,\"price\":2210.00 }")
+                        .content("{  \"model\":\"Fusla\",\"year\":2020 ,\"brand_id\":\"1\",\"price\":10000.00 }")
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(MockMvcResultMatchers
+                        .status()
+                        .is(404));
+    }
+    @Test
+    public void shouldBeDisableToUpdateVehiclesWithMissingBrandsAndReturnStatusCode404() throws Exception {
+        URI uri = new URI("/vehicle/1000000");
+        mockMvc
+                .perform(MockMvcRequestBuilders
+                        .put(uri)
+                        .content("{  \"model\":\"Fusla\",\"year\":2020 ,\"brand_id\":\"10\",\"price\":10000.00 }")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers
                         .status()
